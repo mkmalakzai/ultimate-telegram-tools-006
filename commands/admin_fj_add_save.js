@@ -7,12 +7,20 @@
   aliases:
 CMD*/
 
-if (String(user.telegramid) !== String(Bot.getProperty("t6_owner") || "")) return;
-var ch = String(message || "").trim();
-if (!ch) { Bot.sendMessage("❌ Invalid channel."); return; }
-if (ch.indexOf("@") !== 0) ch = "@" + ch;
-var arr = Bot.getProperty("fj_channels",[]);
-if (arr.indexOf(ch) === -1) arr.push(ch);
-Bot.setProperty("fj_channels",arr,"json");
-Bot.sendMessage("✅ Channel added: " + ch);
+if(String(user.telegramid)!==String(Bot.getProperty("t6_owner")||""))return;
+var username=String(message||"").trim();
+if(username.indexOf("@")!==0){Bot.sendMessage("❌ Invalid username. Send it like `@yourchannel`.");Bot.runCommand("admin_fj_add_save");return;}
+var channels=Bot.getProperty("fj_channels",[]);
+var normalized=[];
+for(var i=0;i<channels.length;i++){
+  var c=channels[i];
+  if(typeof c=="string") c={username:c,title:c.replace("@","")};
+  if(c&&c.username){
+    if(c.username==username){Bot.sendMessage("⚠️ This channel is already added.");Bot.runCommand("admin_fj");return;}
+    normalized.push(c);
+  }
+}
+normalized.push({username:username,title:username.replace("@","")});
+Bot.setProperty("fj_channels",normalized,"json");
+Bot.sendMessage("✅ Channel added successfully.");
 Bot.runCommand("admin_fj");
