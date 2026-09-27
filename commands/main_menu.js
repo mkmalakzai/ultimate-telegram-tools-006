@@ -17,7 +17,6 @@ var row2 = [];
 var row3 = [];
 
 if (Bot.getProperty("t6_module_post_builder","yes")=="yes") row1.push({title:"📝 Post Builder",command:"post_builder"});
-if (Bot.getProperty("t6_module_button_maker","yes")=="yes") row1.push({title:"🔘 Button Maker",command:"button_maker"});
 if (row1.length) kb.push(row1);
 
 if (Bot.getProperty("t6_module_id_tools","yes")=="yes") row2.push({title:"🆔 ID Tools",command:"id_tools"});
