@@ -1,7 +1,8 @@
 /*CMD
   command: link_share_result
   help:
-  need_reply: false
+  need_reply: true
+  auto_retry_time:
   folder: TOOLS
   aliases:
 CMD*/
