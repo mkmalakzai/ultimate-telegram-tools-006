@@ -28,7 +28,8 @@ if (Bot.getProperty("t6_module_link_tools","yes")=="yes") row3.push({title:"🔗
 if (Bot.getProperty("t6_module_text_tools","yes")=="yes") row3.push({title:"✍️ Text Tools",command:"text_tools"});
 if (row3.length) kb.push(row3);
 
-kb.push([{title:"📊 My Activity",command:"my_activity"},{title:"ℹ️ Help",command:"help"}]);
+kb.push([{title:"🔤 Font Changer",command:"font_tools"},{title:"📊 My Activity",command:"my_activity"}]);
+kb.push([{title:"ℹ️ Help",command:"help"}]);
 
 var owner = String(Bot.getProperty("t6_owner") || "");
 if (String(user.telegramid) === owner) kb.push([{title:"🛠 Admin Panel",command:"admin_panel"}]);
