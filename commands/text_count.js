@@ -1,7 +1,7 @@
 /*CMD
   command: text_count
   help:
-  need_reply: true
+  need_reply: false
   folder: TOOLS
   aliases:
 CMD*/
