@@ -2,9 +2,22 @@
   command: button_new
   help:
   need_reply: false
+  auto_retry_time:
   folder: TOOLS
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
   aliases:
+  group:
 CMD*/
 
-Bot.sendMessage("🔘 Send the button title.");
-Bot.run({command:"button_title_save", options:{}, waitForAnswer:true});
+Bot.sendInlineKeyboard(
+  [[{title:"❌ Cancel",command:"button_maker"}]],
+  "🔘 *NEW BUTTON*\n━━━━━━━━━━━━━━\n\nSend the button title."
+);
+Bot.runCommand("button_title_save");
