@@ -1,7 +1,8 @@
 /*CMD
   command: button_url_save
   help:
-  need_reply: false
+  need_reply: true
+  auto_retry_time:
   folder: TOOLS
   aliases:
 CMD*/
