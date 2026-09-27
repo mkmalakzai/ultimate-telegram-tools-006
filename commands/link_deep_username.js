@@ -1,7 +1,8 @@
 /*CMD
   command: link_deep_username
   help:
-  need_reply: false
+  need_reply: true
+  auto_retry_time:
   folder: TOOLS
   aliases:
 CMD*/
