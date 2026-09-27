@@ -1,7 +1,7 @@
 /*CMD
   command: post_new
   help:
-  need_reply: true
+  need_reply: false
   folder: TOOLS
   aliases:
 CMD*/
