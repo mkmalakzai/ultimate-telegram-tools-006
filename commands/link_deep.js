@@ -1,7 +1,7 @@
 /*CMD
   command: link_deep
   help:
-  need_reply: true
+  need_reply: false
   folder: TOOLS
   aliases:
 CMD*/
