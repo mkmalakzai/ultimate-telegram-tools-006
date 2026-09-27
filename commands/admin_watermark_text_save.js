@@ -1,7 +1,8 @@
 /*CMD
   command: admin_watermark_text_save
   help:
-  need_reply: false
+  need_reply: true
+  auto_retry_time:
   folder: ADMIN
   aliases:
 CMD*/
