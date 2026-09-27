@@ -33,5 +33,7 @@ if (users.indexOf(uid) === -1) {
 }
 
 Bot.setProperty("t6_name_" + uid, user.first_name || user.username || uid, "string");
-User.setProperty("t6_after_fj", "main_menu", "string");
+var sp=String(typeof params==="undefined"?"":params||"").trim();
+if(sp.indexOf("file_")===0){User.setProperty("t6_after_fj","file_deliver "+sp.substring(5),"string");}
+else{User.setProperty("t6_after_fj","main_menu","string");}
 Bot.runCommand("force_join");
