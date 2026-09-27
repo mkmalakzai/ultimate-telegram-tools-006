@@ -9,7 +9,7 @@ CMD*/
 if (String(user.telegramid) !== String(Bot.getProperty("t6_owner") || "")) { Bot.sendMessage("⛔ Access denied."); return; }
 
 var key = String(params || "").trim();
-var allowed = ["post_builder","button_maker","id_tools","file_tools","link_tools","text_tools"];
+var allowed = ["post_builder","id_tools","file_tools","link_tools","text_tools"];
 if (allowed.indexOf(key) === -1) return;
 
 var prop = "t6_module_" + key;
