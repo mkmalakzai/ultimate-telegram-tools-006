@@ -1,7 +1,8 @@
 /*CMD
   command: admin_ban_apply
   help:
-  need_reply: false
+  need_reply: true
+  auto_retry_time:
   folder: ADMIN
   aliases:
 CMD*/
