@@ -12,10 +12,15 @@ if (Bot.getProperty("user_banned_" + user.telegramid) == "yes") {
 }
 
 if (Bot.getProperty("t6_setup_done") !== "yes") {
-  Bot.sendInlineKeyboard(
-    [[{title:"⚙️ Setup",command:"/setup"}]],
-    "🧰 *ULTIMATE TELEGRAM TOOLS*\n━━━━━━━━━━━━━━\n\nThis bot is not configured yet."
-  );
+  var owner = String(Bot.getProperty("t6_setup_owner") || "6589090462");
+  if (String(user.telegramid) === owner) {
+    Bot.sendInlineKeyboard(
+      [[{title:"⚙️ Setup",command:"/setup"}]],
+      "🧰 *ULTIMATE TELEGRAM TOOLS*\n━━━━━━━━━━━━━━\n\nThis bot is not configured yet."
+    );
+  } else {
+    Bot.sendMessage("🛠 This bot is being configured. Please try again soon.");
+  }
   return;
 }
 
